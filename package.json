@@ -1,0 +1,17 @@
+{
+  "name": "language-2mfg",
+  "version": "0.0.0",
+  "description": "2mfg language support in Atom",
+  "engines": {
+    "atom": "*"
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/js4785/language-2mfg.git"
+  },
+  "bugs": {
+    "url": "https://github.com/js4785/language-2mfg/issues"
+  },
+  "license": "MIT"
+}

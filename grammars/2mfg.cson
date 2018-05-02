@@ -1,0 +1,100 @@
+'scopeName': 'text.2mfg'
+'name': '2mfg'
+'fileTypes': [ '2mfg' ]
+'patterns': [
+  {
+    'begin': '\"'
+    'end': '\"'
+    'name': 'string.quoted.double.2mfg'
+  }
+  {
+    'begin': '\\(\\*'
+    'end': '\\*\\)'
+    'name': 'comment.block.2mfg'
+  }
+  {
+    'match': '\\b(True|False)\\b'
+    'name': 'constant.language.2mfg'
+  }
+  {
+    'name' : 'keyword.control.2mfg';
+    'match' : '\b(return)\b';
+  }
+  {
+    'match': '(.*)(->)(.*)\\s+(\\w+)\\s+\\=(?!=)(?!>)'
+    'captures':
+        '2':
+            'name': 'storage.type.function.2mfg'
+        '4':
+            'name': 'entity.name.function.2mfg'
+  }
+  {
+    'match': '[a-zA-Z0-9]+:'
+    'name': 'variable.parameter'
+  }
+  # {
+  #   'begin': '\\->'
+  #   'beginCaptures':
+  #     '0':
+  #       'name': 'storage.type.function.2mfg'
+  #   'end': '\\=(?!\\=)(?!>)'
+  #   'patterns':
+  #     [
+  #       'match':'\\s+(\\w+)\\s+'
+  #       'captures':
+  #         '1':
+  #           'name': 'entity.name.function.2mfg'
+  #     ]
+  # }
+  # {
+  #   'begin': '\\->'
+  #   'beginCaptures':
+  #     '0':
+  #       'name': 'storage.type.function.2mfg'
+  #   'end': '\\=(?!\\=)(?!>)'
+  #   'endCaptures':
+  #     '0':
+  #       'name': 'storage.type.function.2mfg'
+  #   'name': 'meta.function.2mfg'
+  #   'patterns':
+  #     [
+  #       {
+  #         'match':'([a-z<>\\,\\s]*)\\s+(\\w+)\\s+'
+  #         'captures':
+  #           '2':
+  #             'name': 'entity.name.function.2mfg'
+  #       }
+  #     ]
+  # }
+  {
+    'match': '\\+|\\-|\\*|/|\\.|%|@|\\=>|:'
+    'name': 'keyword.operator.arithmetic.2mfg'
+  }
+  {
+    'match': '<\\=|>\\=|\\=\\=|<|>|<>'
+    'name': 'keyword.operator.comparison.2mfg'
+  }
+  {
+    'match': '\\b(and|in|not|or),*\\b'
+    'name': 'keyword.operator.logical.2mfg'
+  }
+  {
+    'match': '\\b(-?((0(x|X)[0-9a-fA-F][0-9a-fA-F_]*)|(0(o|O)[0-7][0-7_]*)|(0(b|B)[01][01_]*)|([0-9][0-9_]*)))'
+    'name': 'constant.numeric.integer.2mfg'
+  }
+  {
+    'include': '#types'
+  }
+
+  {
+    'match': '(?x)\\b(if|print|int2str|bool2str|getHead|prepend|ifFunc|pmap|graph2tex|pow|list2str|str2str|println|map|filter|reduce|fst|snd|len|enumerate|rev|concat|hasProperty|belongs|powerset|getNeighbors|BFS|isReachable|shortestPath)\\b'
+    'name': 'support.function.builtin.2mfg'
+  }
+
+]
+'repository':
+  'types':
+    {
+      'match': '(\\b(int|bool|void|string)\\b)|(\\s*\'[a-z]\\b)'
+      'name': 'storage.type.2mfg'
+    }
