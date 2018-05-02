@@ -29,7 +29,7 @@
             'name': 'entity.name.function.2mfg'
   }
   {
-    'match': '[a-zA-Z0-9]+:'
+    'match': '[a-zA-Z0-9]+\\s*:'
     'name': 'variable.parameter'
   }
   # {
